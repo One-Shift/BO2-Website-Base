@@ -1,0 +1,20 @@
+AddDefaultCharset utf-8
+
+SetEnv TZ Europe/Lisbon
+
+ErrorDocument 403 /templates/error/403.html
+ErrorDocument 404 /templates/error/404.html
+
+<IfModule dir_module>
+    DirectoryIndex index.php index.html
+</IfModule>
+
+<IfModule mod_php5.c>
+    php_value display_errors on
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteRule ^0/([^/]*)/$ ?pg=$1 [QSA,L]
+    RewriteRule ^0/([^/]*)/([0-9]+)$ ?pg=$1&i=$2 [QSA,L]
+</IfModule>
