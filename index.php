@@ -26,9 +26,6 @@
 	/*
 	 *  abaixo é iniciada a criação do template, com base nós ficheiros html
 	 */
-
-	$head = file_get_contents("./templates-e/head.html");
-    	$footer = file_get_contents("./templates-e/footer.html");
     
     	include "./pages/includes.php";
 
