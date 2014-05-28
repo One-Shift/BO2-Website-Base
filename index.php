@@ -35,7 +35,7 @@
  	// print website
     	print str_replace(
 	    	array( "{c2r-path}", "{c2r-head}", "{c2r-content}", "{c2r-sitename}", "{c2r-keywords}", "{c2r-description}", "{c2r-analytics}"),
-	    	array( $configuration["path"], $head, $content, $configruation["site-name"], $language["system"]["keywords"], $language["system"]["description"], $configuration["analytics"]),
+	    	array( $configuration["path"], $head, $content, $configuration["site-name"], $language["system"]["keywords"], $language["system"]["description"], $configuration["analytics"]),
 	    	$template
 	);
 ?>
