@@ -6,7 +6,7 @@
 	
 	
 	/* last thing */
-	$content = str_replace(
+	$template = str_replace(
 		array("{c2r-header}", "{c2r-footer}"),
 		array($header, $footer),
 		$page_template

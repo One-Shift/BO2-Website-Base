@@ -21,7 +21,9 @@
 		$lg_s = "pt";
 	}
     
-    	include sprintf("./languages/%s.php", $lg_s);
+    $head = file_get_contents("./templates-e/head.html");
+
+    include sprintf("./languages/%s.php", $lg_s);
     
 	/*
 	 *  abaixo é iniciada a criação do template, com base nós ficheiros html
