@@ -1,4 +1,5 @@
 <?php
+	include "./backoffice/class/PHPMailer/class.phpmailer.php";
 	include "./backoffice/configuration.php";
 	include "./backoffice/connect.php";
 	include "./backoffice/functions.php";
