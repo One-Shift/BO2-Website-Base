@@ -21,6 +21,13 @@
 		$lg = 1;
 		$lg_s = "pt";
 	}
+
+    // controlador de ID
+    if (isset($_GET["i"]) && !empty($_GET["i"])) {
+		$id = intval($_GET["i"]);
+	} else {
+		$id = null;
+	}
     
     $head = file_get_contents("./templates-e/head.html");
 
