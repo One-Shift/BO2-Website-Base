@@ -52,6 +52,13 @@
 	} else {
 		$id = null;
 	}
+
+	// controlador de acção
+    if (isset($_GET["a"]) && !empty($_GET["a"])) {
+		$a = intval($_GET["a"]);
+	} else {
+		$a = null;
+	}
     
     $head = file_get_contents("./templates-e/head.html");
 
