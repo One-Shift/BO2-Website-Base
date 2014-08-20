@@ -1,4 +1,9 @@
 User-Agent: *
 Disallow: /backoffice
+Disallow: /pages
+Disallow: /pages-e
+Disallow: /templates
+Disallow: /templates-e
+Disallow: /site-assets
 Allow: /u-img
 Allow: /u-docs
