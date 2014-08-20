@@ -3,8 +3,8 @@ Disallow: /backoffice
 Disallow: /languages
 Disallow: /pages
 Disallow: /pages-e
+Disallow: /site-assets
 Disallow: /templates
 Disallow: /templates-e
-Disallow: /site-assets
 Allow: /u-img
 Allow: /u-docs
