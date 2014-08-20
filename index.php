@@ -3,6 +3,7 @@
 	include "./backoffice/configuration.php";
 	include "./backoffice/connect.php";
 	include "./backoffice/functions.php";
+	include "./pages/functions.php";
 
 	// controlador de sessão
 	if (isset($_COOKIE[$configuration["cookie"]]) && !empty($_COOKIE[$configuration["cookie"]])) {
