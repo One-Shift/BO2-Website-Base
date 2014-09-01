@@ -1,11 +1,11 @@
 <?php
-    $language = array(
-        "system" => array (
-            "keywords" => "",
-            "description" => "",
-        ),
+	$language = array(
+		"system" => array (
+			"keywords" => "",
+			"description" => "",
+		),
         
-        "home" => array (
-            
-        ),
-    );
+		"home" => array (
+
+		),
+	);

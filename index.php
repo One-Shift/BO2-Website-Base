@@ -61,9 +61,9 @@
 		$a = null;
 	}
     
-    $head = file_get_contents("./templates-e/head.html");
+	$head = file_get_contents("./templates-e/head.html");
 
-    include sprintf("./languages/%s.php", $lg_s);
+	include sprintf("./languages/%s.php", $lg_s);
     
 	/*
 	 *  abaixo é iniciada a criação do template, com base nós ficheiros html
