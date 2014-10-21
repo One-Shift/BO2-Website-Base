@@ -72,8 +72,17 @@
 	include "./pages/includes.php";
 
  	// print website
-	print str_replace(
+
+	$template = str_replace(
 		array("{c2r-head}", "{c2r-sitename}", "{c2r-keywords}", "{c2r-description}", "{c2r-analytics}",  "{c2r-path}", "{c2r-lg}"),
 		array($head, $configuration["site-name"], $language["system"]["keywords"], $language["system"]["description"], $configuration["analytics"],  $configuration["path"], $lg_s),
 		$template
-	);
+	)
+
+	// testint minify system
+	if ($configuration["minify"]) {
+		print minifyHTML($template);
+	} else {
+		print $template;
+	}
+	
