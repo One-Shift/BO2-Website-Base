@@ -1,8 +1,8 @@
 <?php
-	$page_template = file_get_contents("./templates/home.html");
+	include "./pages-e/header.php";
+	include "./pages-e/footer.php";
 
-	$header = file_get_contents("./templates-e/header.html");
-	$footer = file_get_contents("./templates-e/footer.html");
+	$page_template = file_get_contents("./templates/home.html");
 
 	/* last thing */
 	$template = str_replace(
