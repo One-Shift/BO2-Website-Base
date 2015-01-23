@@ -1,10 +1,10 @@
 <?php
 
-include "./backoffice/class/PHPMailer/class.phpmailer.php";
-include "./backoffice/configuration.php";
-include "./backoffice/connect.php";
-include "./backoffice/functions.php";
-include "./pages/functions.php";
+include "backoffice/class/PHPMailer/class.phpmailer.php";
+include "backoffice/configuration.php";
+include "backoffice/connect.php";
+include "backoffice/functions.php";
+include "pages/functions.php";
 
 // controlador de sessão
 if (isset($_COOKIE[$configuration["cookie"]]) && !empty($_COOKIE[$configuration["cookie"]])) {
@@ -21,7 +21,7 @@ if (isset($_COOKIE[$configuration["cookie"]]) && !empty($_COOKIE[$configuration[
 
         if ($nr[0] === 1) {
             $auth = true;
-            $authData = $source[0]->fetch_array(MYSQLI_ASSOC);
+            $authData = $source[0]->fetch_assoc();
         } else {
             $auth = false;
         }
@@ -65,20 +65,22 @@ if (isset($_GET["a"]) && !empty($_GET["a"])) {
     $a = null;
 }
 
-$head = file_get_contents("./templates-e/head.html");
+$head = file_get_contents("templates-e/head.html");
 
-include sprintf("./languages/%s.php", $lg_s);
+include sprintf("languages/%s.php", $lg_s);
 
 /*
  *  abaixo é iniciada a criação do template, com base nós ficheiros html
  */
 
-include "./pages/includes.php";
+include "pages/includes.php";
 
 // print website
 
 $template = str_replace(
-        array("{c2r-head}", "{c2r-sitename}", "{c2r-keywords}", "{c2r-description}", "{c2r-analytics}", "{c2r-path}", "{c2r-lg}"), array($head, $configuration["site-name"], $language["system"]["keywords"], $language["system"]["description"], $configuration["analytics"], $configuration["path"], $lg_s), $template
+        array("{c2r-head}", "{c2r-sitename}", "{c2r-keywords}", "{c2r-description}", "{c2r-analytics}", "{c2r-path}", "{c2r-lg}"), 
+        array($head, $configuration["site-name"], $language["system"]["keywords"], $language["system"]["description"], $configuration["analytics"], $configuration["path"], $lg_s), 
+        $template
 );
 
 // testint minify system
