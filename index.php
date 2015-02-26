@@ -27,35 +27,37 @@ if (isset($_COOKIE[$configuration["cookie"]]) && !empty($_COOKIE[$configuration[
         }
     }
 } else {
-    $auth = false;
+	$auth = false;
 }
 
 // controlador de páginas
 if (isset($_GET["pg"]) && !empty($_GET["pg"])) {
-    $pg = $_GET["pg"];
+	$pg = $_GET["pg"];
 } else {
-    $pg = "home";
+	$pg = "home";
 }
 
 // controlador de língua
 if (isset($_GET["lg"]) && !empty($_GET["lg"])) {
-    switch ($_GET["lg"]) {
-        case "pt": $lg = 1;
-            $lg_s = "pt";
-            break;
-        default: $lg = 1;
-            $lg_s = "pt";
-    }
+	switch ($_GET["lg"]) {
+		case "pt":
+			$lg = 1;
+			$lg_s = "pt";
+			break;
+		default:
+			$lg = 1;
+			$lg_s = "pt";
+	}
 } else {
-    $lg = 1;
-    $lg_s = "pt";
+	$lg = 1;
+	$lg_s = "pt";
 }
 
 // controlador de ID
 if (isset($_GET["i"]) && !empty($_GET["i"])) {
-    $id = intval($_GET["i"]);
+	$id = intval($_GET["i"]);
 } else {
-    $id = null;
+	$id = null;
 }
 
 // controlador de acção
@@ -78,9 +80,25 @@ include "pages/includes.php";
 // print website
 
 $template = str_replace(
-        array("{c2r-head}", "{c2r-sitename}", "{c2r-keywords}", "{c2r-description}", "{c2r-analytics}", "{c2r-path}", "{c2r-lg}"), 
-        array($head, $configuration["site-name"], $language["system"]["keywords"], $language["system"]["description"], $configuration["analytics"], $configuration["path"], $lg_s), 
-        $template
+	[
+		"{c2r-head}", 
+		"{c2r-sitename}", 
+		"{c2r-keywords}", 
+		"{c2r-description}", 
+		"{c2r-analytics}", 
+		"{c2r-path}", 
+		"{c2r-lg}"
+	], 
+	[
+		$head, 
+		$configuration["site-name"], 
+		$language["system"]["keywords"], 
+		$language["system"]["description"],
+		$configuration["analytics"], 
+		$configuration["path"], 
+		$lg_s
+	], 
+	$template
 );
 
 // testint minify system
@@ -89,4 +107,3 @@ if ($configuration["minify"]) {
 } else {
     print $template;
 }
-	
