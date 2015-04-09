@@ -69,7 +69,7 @@ if (isset($_GET["a"]) && !empty($_GET["a"])) {
 
 $head = file_get_contents("templates-e/head.html");
 
-$language = parse_ini_file(sprintf("./languages/%s.ini", $lg_s), true);
+$language = parse_ini_file(sprintf("languages/%s.ini", $lg_s), true);
 
 /*
  *  abaixo é iniciada a criação do template, com base nós ficheiros html
