@@ -101,7 +101,7 @@ $template = str_replace(
 	$template
 );
 
-// testint minify system
+// minify system
 if ($configuration["minify"]) {
 	print minifyPage($template);
 } else {
