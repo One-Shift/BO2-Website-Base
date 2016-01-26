@@ -78,7 +78,6 @@ $language = parse_ini_file(sprintf("languages/%s.ini", $lg_s), true);
 include "pages/includes.php";
 
 // print website
-
 $template = str_replace(
 	[
 		"{c2r-head}", 
@@ -95,13 +94,19 @@ $template = str_replace(
 				"{c2r-og-title}",
 				"{c2r-og-url}",
 				"{c2r-og-image}",
-				"{c2r-og-description}"
+				"{c2r-og-description}",
+
+				"{c2r-lib-bootstrap}",
+				"{c2r-lib-fontawesome}"
 			],
 			[
 				(isset($og["title"])) ? $og["title"] : $configuration["site-name"],
 				(isset($og["url"])) ? $og["url"] : "http://".$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"],
 				(isset($og["image"])) ? "http://".$_SERVER["HTTP_HOST"].$configuration["path"]."/u-img/".$og["image"] : "http://".$_SERVER["HTTP_HOST"].$configuration["path"]."/site-assets/default-share-image.jpg",
-				(isset($og["description"])) ? $og["description"] : $language["system"]["description"]
+				(isset($og["description"])) ? $og["description"] : $language["system"]["description"],
+
+				file_get_contents("http://nexus-pt.github.io/BO2/bootstrap.html"),
+				file_get_contents("http://nexus-pt.github.io/BO2/fontawesome.html")
 			],
 			$head
 		),
