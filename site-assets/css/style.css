@@ -12,3 +12,9 @@
 .block60 {display: inline-block; width: 60px;}
 .block30 {display: inline-block; width: 30px;}
 .block15 {display: inline-block; width: 15px;}
+
+.taleft {text-align: left;}
+.tacenter {text-align: center;}
+.taright {text-align: right;}
+.tajustify {text-align: justify;}
+
