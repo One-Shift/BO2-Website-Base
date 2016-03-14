@@ -102,7 +102,7 @@ $template = str_replace(
 			[
 				(isset($og["title"])) ? $og["title"] : $configuration["site-name"],
 				(isset($og["url"])) ? $og["url"] : "http://".$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"],
-				(isset($og["image"])) ? "http://".$_SERVER["HTTP_HOST"].$configuration["path"]."/u-img/".$og["image"] : "http://".$_SERVER["HTTP_HOST"].$configuration["path"]."/site-assets/default-share-image.jpg",
+				(isset($og["image"])) ? $og["image"] : "http://".$_SERVER["HTTP_HOST"].$configuration["path"]."/site-assets/default-share-image.jpg",
 				(isset($og["description"])) ? $og["description"] : $language["system"]["description"],
 
 				file_get_contents("http://nexus-pt.github.io/BO2/bootstrap.html"),
