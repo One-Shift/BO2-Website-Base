@@ -63,7 +63,7 @@ function getImgsFilter ($id, $module, $filter = []) {
 			$item = str_replace(" ", "%", $item);
 			$item = "%$item%";
 
-			$query .= sprintf("alt_2 LIKE '%s' ", $item);
+			$query .= sprintf("description LIKE '%s' ", $item);
 			$position++;
 		}
 
@@ -145,7 +145,7 @@ function getDocsFilter ($id, $module, $filter = []) {
 			$item = str_replace(" ", "%", $item);
 			$item = "%$item%";
 
-			$query .= sprintf("alt_2 LIKE '%s' ", $item);
+			$query .= sprintf("description LIKE '%s' ", $item);
 			$position++;
 		}
 
