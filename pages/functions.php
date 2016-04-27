@@ -50,7 +50,10 @@ function getImgsFilter ($id, $module, $filter = []) {
 		$position = 0;
 		$query = "";
 
-		$query = sprintf("SELECT * FROM %s_images WHERE ", $configuration["mysql-prefix"]);
+		$query = sprintf(
+			"SELECT * FROM %s_files WHERE type = '%s' AND ",
+			$configuration["mysql-prefix"], "image"
+		);
 
 		foreach ($filter as $item) {
 			if ($position !== 0) {
@@ -129,7 +132,10 @@ function getDocsFilter ($id, $module, $filter = []) {
 		$position = 0;
 		$query = "";
 
-		$query = sprintf("SELECT * FROM %s_documents WHERE ", $configuration["mysql-prefix"]);
+		$query = sprintf(
+			"SELECT * FROM %s_documents WHERE type = '%s' AND ",
+			$configuration["mysql-prefix"], "document"
+		);
 
 		foreach ($filter as $item) {
 			if ($position !== 0) {
