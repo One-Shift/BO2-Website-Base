@@ -4,7 +4,10 @@
 function getImg ($id, $module) {
 	global $configuration, $mysqli;
 
-	$query = sprintf("SELECT * FROM %s_images WHERE module = '%s' AND id_ass = '%s' LIMIT %s", $configuration["mysql-prefix"], $module, $id, 1);
+	$query = sprintf(
+		"SELECT * FROM %s_files WHERE type='%s' AND module = '%s' AND id_ass = '%s' LIMIT %s",
+		$configuration["mysql-prefix"], "image", $module, $id, 1
+	);
 	$source = $mysqli->query($query);
 
 	if ($source->num_rows > 0) {
@@ -21,7 +24,10 @@ function getImgs ($id, $module) {
 	global $configuration, $mysqli;
 	$list = [];
 
-	$query = sprintf("SELECT * FROM %s_images WHERE module = '%s' AND id_ass = '%s'", $configuration["mysql-prefix"], $module, $id);
+	$query = sprintf(
+		"SELECT * FROM %s_files WHERE type='%s' AND module = '%s' AND id_ass = '%s'",
+		$configuration["mysql-prefix"], "image", $module, $id
+	);
 	$source = $mysqli->query($query);
 
 	while ($data = $source->fetch_assoc()) {
@@ -79,7 +85,10 @@ function getImgsFilter ($id, $module, $filter = []) {
 function getDoc ($id, $module) {
 	global $configuration, $mysqli;
 
-	$query = sprintf("SELECT * FROM %s_documents WHERE module = '%s' AND id_ass = '%s' LIMIT %s", $configuration["mysql-prefix"], $module, $id, 1);
+	$query = sprintf(
+		"SELECT * FROM %s_files WHERE type='%s' AND module = '%s' AND id_ass = '%s' LIMIT %s",
+		$configuration["mysql-prefix"], "document", $module, $id, 1
+	);
 	$source = $mysqli->query($query);
 
 	if ($source->num_rows > 0) {
@@ -95,7 +104,10 @@ function getDocs ($id, $module) {
 	global $configuration, $mysqli;
 	$list = [];
 
-	$query = sprintf("SELECT * FROM %s_documents WHERE module = '%s' AND id_ass = '%s'", $configuration["mysql-prefix"], $module, $id);
+	$query = sprintf(
+		"SELECT * FROM %s_files WHERE type='%s' AND module = '%s' AND id_ass = '%s'",
+		$configuration["mysql-prefix"], "document", $module, $id
+	);
 	$source = $mysqli->query($query);
 
 	while ($data = $source->fetch_assoc()) {
