@@ -63,7 +63,7 @@ function getImgsFilter ($id, $module, $filter = []) {
 			$item = str_replace(" ", "%", $item);
 			$item = "%$item%";
 
-			$query .= sprintf("description LIKE '%s' ", $item);
+			$query .= sprintf("code LIKE '%s' ", $item);
 			$position++;
 		}
 
@@ -145,7 +145,7 @@ function getDocsFilter ($id, $module, $filter = []) {
 			$item = str_replace(" ", "%", $item);
 			$item = "%$item%";
 
-			$query .= sprintf("description LIKE '%s' ", $item);
+			$query .= sprintf("code LIKE '%s' ", $item);
 			$position++;
 		}
 
