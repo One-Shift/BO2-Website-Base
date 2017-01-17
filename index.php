@@ -1,6 +1,7 @@
 <?php
 
-include "backoffice/class/PHPMailer/class.phpmailer.php";
+require 'backoffice/class/PHPMailer/PHPMailerAutoload.php';
+
 include "backoffice/configuration.php";
 include "backoffice/connect.php";
 include "backoffice/functions.php";
