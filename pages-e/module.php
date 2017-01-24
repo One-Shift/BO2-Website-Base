@@ -1,6 +1,6 @@
 <?php
 
-$page_e_template = file_get_contents("templates-e/module.html");
+$page_e_template = file_get_contents("templates-e/module.tpl");
 
 /* last thing */
 $page_template = str_replace(

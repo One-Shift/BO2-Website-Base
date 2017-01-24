@@ -68,7 +68,7 @@ if (isset($_GET["a"]) && !empty($_GET["a"])) {
 	$a = null;
 }
 
-$head = file_get_contents("templates-e/head.html");
+$head = file_get_contents("templates-e/head.tpl");
 
 $language = parse_ini_file(sprintf("languages/%s.ini", $lg_s), true);
 

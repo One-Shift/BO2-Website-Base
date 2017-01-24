@@ -5,8 +5,9 @@
 	</head>
 	<body>
 		{c2r-header}
-		<div id="home" class="">
+		<div class="home">
 			<!-- here write the HTML code -->
+			
 		</div>
 		{c2r-footer}
 	</body>
