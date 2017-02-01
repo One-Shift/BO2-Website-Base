@@ -133,7 +133,7 @@ function getDocsFilter ($id, $module, $filter = []) {
 		$query = "";
 
 		$query = sprintf(
-			"SELECT * FROM %s_documents WHERE type = '%s' AND ",
+			"SELECT * FROM %s_files WHERE type = '%s' AND ",
 			$configuration["mysql-prefix"], "document"
 		);
 
